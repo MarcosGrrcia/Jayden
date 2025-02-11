@@ -24,9 +24,13 @@
   <script>
     document.body.addEventListener('click', function() {
       var video = document.getElementById('video');
-      if (video.muted) {
+      
+      if (video.paused) {
         video.muted = false;  // Unmute the video
         video.play();         // Play the video
+      } else {
+        video.pause();        // Pause if already playing (optional)
+        video.currentTime = 0; // Reset to the beginning
       }
     });
   </script>
