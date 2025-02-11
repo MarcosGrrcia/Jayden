@@ -5,54 +5,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Jayden Stickbug Ahh</title>
   <link rel="stylesheet" href="./style.css" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-  <style>
-    .notification {
-      background-color: #ffdd57;
-      padding: 10px;
-      text-align: center;
-      font-size: 18px;
-      display: none;
-    }
-  </style>
 </head>
 <body>
-  <div class="poster">
-    <img class="image" src="./assets/images/jayden.jpg" alt="Jayden Stickbug"/>
-    <h1>Get stickbugged LOL</h1>
-    <p></p>
-  </div>
+  <!-- Video Element -->
+  <video id="video" muted autoplay loop>
+    <source src="./assets/video/stickbugged.mp4" type="video/mp4">
+    Your browser does not support the video element.
+  </video>
 
-  <div class="notification">
-    Click anywhere to enable audio
+  <div class="poster">
+    <!-- You can remove the image since it's now a video -->
+    <h1>Get stickbugged LOL</h1>
+    <p>Enjoy the video!</p>
   </div>
 
   <script>
-    // Create an AudioContext to enable user interaction
-    const audioContext = new (window.AudioContext || window.webkitAudioContext)();
-
-    // Load the audio
-    const audio = new Audio('./assets/audio/stickbugged.mp3');
-    audio.loop = true;
-
-    // Create a function to start audio on user click
-    function enableAudio() {
-      // Start the audio by playing it through the AudioContext
-      const source = audioContext.createMediaElementSource(audio);
-      source.connect(audioContext.destination);
-      audio.play();
-      document.querySelector('.notification').style.display = 'none'; // Hide the prompt
-    }
-
-    // Show the notification on page load
-    window.onload = function() {
-      document.querySelector('.notification').style.display = 'block';
-    };
-
-    // Add event listener to the body to play the audio when clicked
-    document.body.addEventListener('click', enableAudio);
+    // Unmute the video when the user clicks anywhere on the page
+    document.body.addEventListener('click', function() {
+      var video = document.getElementById('video');
+      video.muted = false; // Unmute the video
+    });
   </script>
 </body>
 </html>
