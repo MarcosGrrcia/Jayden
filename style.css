@@ -21,7 +21,7 @@ h1 {
 }
 
 .video {
-  width: 100%;  /* Make the video fill the parent container */
+  width: 50%;  /* Make the video fill the parent container */
   height: auto;
   border: 5px solid white; /* Border around the video (optional) */
 }
