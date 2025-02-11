@@ -20,7 +20,8 @@ h1 {
   position: relative; /* Allow absolute positioning of text inside */
 }
 
-#video {
+.video {
   width: 100%;  /* Make the video fill the parent container */
+  height: auto;
   border: 5px solid white; /* Border around the video (optional) */
 }
