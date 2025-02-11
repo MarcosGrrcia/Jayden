@@ -1,10 +1,13 @@
 html {
   background-color: black;
+  height: 100%;
+  margin: 0;
 }
 
 h1 {
   text-transform: uppercase;
   font-size: 3rem;
+  margin-top: 20px; /* Add space above the heading */
 }
 
 .poster {
@@ -14,9 +17,11 @@ h1 {
   color: white;
   font-family: "Libre Baskerville", serif;
   text-align: center;
+  position: relative; /* Allow absolute positioning of text inside */
 }
 
-.image {
-  width: 100%;
-  border: 5px solid white;
+#video {
+  width: 100%;  /* Make the video fill the parent container */
+  height: auto; /* Maintain the aspect ratio of the video */
+  border: 5px solid white; /* Border around the video (optional) */
 }
