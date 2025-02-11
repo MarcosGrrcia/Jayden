@@ -5,37 +5,54 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Jayden Stickbug Ahh</title>
   <link rel="stylesheet" href="./style.css" />
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    .notification {
+      background-color: #ffdd57;
+      padding: 10px;
+      text-align: center;
+      font-size: 18px;
+      display: none;
+    }
+  </style>
 </head>
 <body>
-  <audio autoplay loop hidden>
-    <source src="./assets/audio/stickbugged.mp3" type="audio/mpeg">
-    Your browser does not support the audio element.
-  </audio>
   <div class="poster">
     <img class="image" src="./assets/images/jayden.jpg" alt="Jayden Stickbug"/>
     <h1>Get stickbugged LOL</h1>
     <p></p>
   </div>
+
+  <div class="notification">
+    Click anywhere to enable audio
+  </div>
+
+  <script>
+    // Create an AudioContext to enable user interaction
+    const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+
+    // Load the audio
+    const audio = new Audio('./assets/audio/stickbugged.mp3');
+    audio.loop = true;
+
+    // Create a function to start audio on user click
+    function enableAudio() {
+      // Start the audio by playing it through the AudioContext
+      const source = audioContext.createMediaElementSource(audio);
+      source.connect(audioContext.destination);
+      audio.play();
+      document.querySelector('.notification').style.display = 'none'; // Hide the prompt
+    }
+
+    // Show the notification on page load
+    window.onload = function() {
+      document.querySelector('.notification').style.display = 'block';
+    };
+
+    // Add event listener to the body to play the audio when clicked
+    document.body.addEventListener('click', enableAudio);
+  </script>
 </body>
 </html>
-
-<!-- 
-  TODO: Create a motivational post website.
-Style it how ever you like. 
-Look at the goal image for inspiration.
-But it must have the following features:
-1. The main h1 text should be using the Regular Libre Baskerville Font from Google Fonts:
-  https://fonts.google.com/specimen/Libre+Baskerville
-2. The text should be white and background black.
-3. Add your own image into the images folder inside assets. It should have a 5px white border.
-4. The text should be center aligned.
-5. Create a div to contain the h1, p and img elements. Adjust the margins so that the image and text are centered on the page. 
-  Hint: You horizontally center a div by giving it a width of 50% and a margin-left of 25%.
-  Hint: Set the image to have a width of 100% so it fills the div. 
-6. Read about the text-transform property on MDN docs to make the h1 uppercase with CSS.
-  https://developer.mozilla.org/en-US/docs/Web/CSS/text-transform 
--->
