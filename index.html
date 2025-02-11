@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jayden</title>
+  <title>Jayden Stickbug Ahh</title>
   <link rel="stylesheet" href="./style.css" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,6 +20,23 @@
     <h1>Get stickbugged LOL</h1>
     <p></p>
   </div>
+  <div class="notification">
+    Click anywhere to enable audio.
+  </div>
+
+  <script>
+    document.body.addEventListener('click', function() {
+      var audio = document.getElementById('audio');
+      var notification = document.querySelector('.notification');
+      notification.style.display = 'none';
+      audio.play(); // Starts the audio after the user clicks anywhere
+    });
+
+    window.onload = function() {
+      var notification = document.querySelector('.notification');
+      notification.style.display = 'block'; // Show notification on page load
+    };
+  </script>
 </body>
 </html>
 
