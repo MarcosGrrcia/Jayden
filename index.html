@@ -22,11 +22,17 @@
   </div>
 
   <script>
-    // Unmute the video when the user clicks anywhere on the page
-    document.body.addEventListener('click', function() {
+    // Unmute the video when any interaction occurs (click, scroll, mousemove)
+    function unmuteVideo() {
       var video = document.getElementById('video');
       video.muted = false; // Unmute the video
-    });
+    }
+  
+    // Add event listeners for various interactions
+    document.body.addEventListener('click', unmuteVideo);
+    document.body.addEventListener('scroll', unmuteVideo);
+    document.body.addEventListener('mousemove', unmuteVideo);
+    document.body.addEventListener('touchstart', unmuteVideo); // For touch events on mobile
   </script>
 </body>
 </html>
