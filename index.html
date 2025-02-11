@@ -23,20 +23,6 @@
   <div class="notification">
     Click anywhere to enable audio.
   </div>
-
-  <script>
-    document.body.addEventListener('click', function() {
-      var audio = document.getElementById('audio');
-      var notification = document.querySelector('.notification');
-      notification.style.display = 'none';
-      audio.play(); // Starts the audio after the user clicks anywhere
-    });
-
-    window.onload = function() {
-      var notification = document.querySelector('.notification');
-      notification.style.display = 'block'; // Show notification on page load
-    };
-  </script>
 </body>
 </html>
 
