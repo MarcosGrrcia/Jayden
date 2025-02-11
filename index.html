@@ -13,7 +13,7 @@
 <body>
   <div class="poster">
       <!-- Video Element -->
-    <video id="video" muted autoplay loop>
+    <video id="video" muted loop>
       <source src="./assets/audio/stickbugged.mp4" type="video/mp4">
       Your browser does not support the video element.
     </video>
@@ -24,13 +24,9 @@
   <script>
     document.body.addEventListener('click', function() {
       var video = document.getElementById('video');
-      
       if (video.paused) {
         video.muted = false;  // Unmute the video
         video.play();         // Play the video
-      } else {
-        video.pause();        // Pause if already playing (optional)
-        video.currentTime = 0; // Reset to the beginning
       }
     });
   </script>
